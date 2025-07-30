@@ -169,8 +169,15 @@ form button:hover {
 .chart-container {
   position: relative;
   width: 100%;
-  height: 350px;      /* set whatever height you like */
+  height: 350px;    /* adjust chart height here */
   margin-bottom: 2rem;
+}
+
+/* Force canvas to fill its container */
+.chart-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 footer {
