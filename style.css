@@ -21,48 +21,67 @@ header {
 }
 
 header .logo {
+  font-size: 1.5rem;
   font-weight: 700;
-  font-size: 1.4rem;
-  color: #d4af37; /* gold */
+  color: #b8860b; /* gold accent */
+  text-decoration: none;
 }
 
-nav a {
-  margin-right: 1rem;
+header nav a {
+  margin-left: 1rem;
+  font-weight: 600;
   text-decoration: none;
   color: #333333;
-  font-weight: 500;
 }
 
-nav a:last-child {
-  margin-right: 0;
-}
-
-nav a:hover {
-  color: #d4af37;
+header nav a:hover {
+  color: #b8860b;
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* Hero section */
+/* Hero */
 .hero {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .hero-text {
-  flex: 1 1 50%;
+  flex: 1 1 300px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #b8860b;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #a17908;
 }
 
 .hero-image {
-  flex: 1 1 50%;
-  text-align: right;
+  flex: 1 1 300px;
+  text-align: center;
 }
 
 .hero-image img {
@@ -70,135 +89,88 @@ nav a:hover {
   height: auto;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.8rem;
-  color: #d4af37;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #d4af37;
-  color: #ffffff;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 1rem;
-}
-
-.btn:hover {
-  opacity: 0.9;
-}
-
-/* Information section */
-.info {
-  margin-top: 2rem;
-}
-
+/* Info section */
 .info h2 {
-  font-size: 1.8rem;
-  color: #d4af37;
-  margin-bottom: 0.5rem;
-}
-
-/* Gold chart controls */
-.chart-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
-  align-items: flex-end;
 }
 
-.control-group {
-  display: flex;
-  flex-direction: column;
+.info p {
+  margin-bottom: 1.5rem;
 }
 
-.control-group label {
-  font-weight: 600;
-  margin-bottom: 0.2rem;
-}
-
-.control-group input,
-.control-group select {
-  padding: 0.4rem;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-}
-
-#goldChart {
-  width: 100%;
-  max-width: 100%;
-  height: 400px;
-}
-
-/* About page */
-.about-section {
+/* ABOUT page */
+.about {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
-  align-items: center;
-  margin-top: 1rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
 }
 
-.about-image {
-  flex: 1 1 50%;
+.about-image,
+.about-text {
+  flex: 1 1 300px;
 }
 
 .about-image img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-}
-
-.about-text {
-  flex: 1 1 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .about-text h2 {
-  color: #d4af37;
-  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Contact page */
-.contact-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 1rem;
+/* CONTACT page */
+form {
+  margin-bottom: 2rem;
 }
 
-.map-container {
-  flex: 1 1 50%;
-}
-
-.form-container {
-  flex: 1 1 50%;
-}
-
-.form-container form {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-container label {
-  margin-top: 0.5rem;
+form label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: 600;
 }
 
-.form-container input,
-.form-container textarea {
+form input,
+form textarea {
+  width: 100%;
   padding: 0.5rem;
-  border: 1px solid #cccccc;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  margin-top: 0.2rem;
 }
 
-.form-container button {
-  margin-top: 1rem;
-  align-self: flex-start;
+form button {
+  background-color: #b8860b;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+form button:hover {
+  background-color: #a17908;
+}
+
+/* CONTACT PAGE MAP */
+#map {
+  width: 100%;
+  height: 400px;    /* explicit height so Leaflet will render */
+  margin-bottom: 2rem;
+}
+
+/* CHART CONTAINER */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 350px;    /* adjust chart height here */
+  margin-bottom: 2rem;
 }
 
 footer {
@@ -206,5 +178,9 @@ footer {
   text-align: center;
   padding: 1rem 0;
   border-top: 1px solid #e0e0e0;
-  margin-top: 2rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
 }
