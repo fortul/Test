@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gold ETF Insights – Gold Chart</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN for interactive charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <header>
-    <a href="index.html" class="logo">Gold ETF Insights</a>
+    <div class="logo">Gold ETF Insights</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="gold.html">Gold</a>
@@ -19,36 +21,32 @@
   </header>
 
   <main class="container">
-    <h1>Interactive GLD Price Chart</h1>
-    <div class="controls">
-      <label for="freq">Frequency:</label>
-      <select id="freq">
-        <option value="daily">Daily</option>
-        <option value="monthly">Monthly</option>
-        <option value="yearly">Yearly</option>
-      </select>
-
-      <label for="start-date">Start Date:</label>
-      <input type="date" id="start-date"/>
-
-      <label for="end-date">End Date:</label>
-      <input type="date" id="end-date"/>
-
-      <button id="update">Update Chart</button>
+    <h1>Gold ETF Price Chart (GLD)</h1>
+    <p>This interactive chart allows you to explore the historical closing prices of the SPDR&nbsp;Gold&nbsp;Shares ETF (GLD). Use the controls below to choose your desired frequency—daily, monthly or yearly—and select a time range. The data is loaded from a local JSON file (<code>data/gld_data.json</code>). To keep the information current, run the included <code>update_data.py</code> script regularly to fetch the latest prices.</p>
+    <div class="chart-controls">
+      <div class="control-group">
+        <label for="freq">Frequency:</label>
+        <select id="freq">
+          <option value="daily">Daily</option>
+          <option value="monthly">Monthly</option>
+          <option value="yearly">Yearly</option>
+        </select>
+      </div>
+      <div class="control-group">
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date">
+      </div>
+      <div class="control-group">
+        <label for="end-date">End Date:</label>
+        <input type="date" id="end-date">
+      </div>
+      <button class="btn" id="updateChart">Update Chart</button>
     </div>
-
-    <div class="chart-container">
-      <canvas id="goldChart"></canvas>
-    </div>
+    <canvas id="goldChart" width="800" height="400"></canvas>
   </main>
-
   <footer>
     <p>&copy; 2025 Gold ETF Insights. All rights reserved.</p>
   </footer>
-
-  <!-- Chart.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Custom chart logic -->
   <script src="js/goldChart.js"></script>
 </body>
 </html>
