@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gold ETF Insights – Contacts</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha256-xwE/AB5C31Itva05qxUi0/iQQqUX0cZ1kxCQBgtw/hU=" crossorigin=""/>
+</head>
+<body>
+  <header>
+    <div class="logo">Gold ETF Insights</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gold.html">Gold</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contacts</a>
+    </nav>
+  </header>
+  <main class="container">
+    <h1>Contact Us</h1>
+    <p>If you have any questions or feedback, feel free to reach out. Use the form below to send us a message, or find us on the map.</p>
+    <div class="contact-wrapper">
+      <div class="map-container">
+        <div id="map" style="height: 400px;"></div>
+      </div>
+      <div class="form-container">
+        <form id="contact-form" action="mailto:owner@example.com" method="post" enctype="text/plain">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button class="btn" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2025 Gold ETF Insights. All rights reserved.</p>
+  </footer>
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha256-df80fhaJIH/7G3gDJMGJiAUACkN6R4d5KEvAMiHrHMQ=" crossorigin=""></script>
+  <script>
+    // Initialize Leaflet map centered on Zurich (Bahnhofstrasse coordinates)
+    const map = L.map('map').setView([47.3724, 8.5380], 15);
+    // Add OpenStreetMap tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    // Add marker at the generic Zurich address
+    L.marker([47.3724, 8.5380]).addTo(map)
+      .bindPopup('Our Zurich Office\nBahnhofstrasse 1, 8001 Zurich')
+      .openPopup();
+  </script>
+</body>
+</html>
