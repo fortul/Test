@@ -169,7 +169,7 @@ form button:hover {
 .chart-container {
   position: relative;
   width: 100%;
-  height: 350px;    /* adjust chart height here */
+  height: 350px;      /* set whatever height you like */
   margin-bottom: 2rem;
 }
 
