@@ -69,6 +69,8 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+chart.resize();
+  
   // Render function
   const render = () => {
     const freq  = freqSelect.value;
@@ -80,6 +82,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     chart.data.labels   = out.map(o => o.date);
     chart.data.datasets[0].data = out.map(o => o.close);
     chart.update();
+    chart.resize();
   };
 
   updateButton.addEventListener('click', render);
