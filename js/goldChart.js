@@ -48,20 +48,26 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   // Initial chart instance
   let chart = new Chart(ctx, {
-    type: 'line',
-    data: { labels: [], datasets: [{ label: 'GLD Close (USD)', data: [] }] },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        x: { type: 'time', time: { unit: 'month' } },
-        y: { beginAtZero: false }
-      },
-      plugins: {
-        legend: { display: true }
-      }
+  type: 'line',
+  data: {
+    labels: [], 
+    datasets: [{
+      label: 'GLD Close (USD)',
+      data: []
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,    // ← here
+    scales: {
+      x: { type: 'time', time: { unit: 'month' } },
+      y: { beginAtZero: false }
+    },
+    plugins: {
+      legend: { display: true }
     }
-  });
+  }
+});
 
   // Render function
   const render = () => {
